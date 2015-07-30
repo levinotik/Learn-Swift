@@ -95,7 +95,7 @@ mult(2, 2) //should print 4
 
 ## Higher-order functions
 
-Review/read the docs on [Function Types.](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Functions.html#//apple_ref/doc/uid/TP40014097-CH10-ID174). Specifically, focus on the sections titled "Function Types as Parameter Types" and "Function Types as Return Types" *You may need to scroll down a bit to see those sections*.
+Review/read the docs on [Function Types](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Functions.html#//apple_ref/doc/uid/TP40014097-CH10-ID174). Specifically, focus on the sections titled "Function Types as Parameter Types" and "Function Types as Return Types" *You may need to scroll down a bit to see those sections*.
 
 If you've read the section linked to above, you know that just like a function can take, say, an `Int` or a `String`, as an argument, it can also take a **function** as an argument. Similarly, a function can return another function. 
 
@@ -115,8 +115,6 @@ func buzz(x: Int, f: (Int, String) -> String) -> String {...}
 ```
 
 Read the documentation on [Closures](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Closures.html#//apple_ref/doc/uid/TP40014097-CH11-ID94)
-
-The upshot is that the same way function types are perfectly valid parameters/arguments to functions 	so too they are valid return types. 
 
 Here's a function that returns a function:
 
