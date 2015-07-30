@@ -129,10 +129,65 @@ Use the calculate function to get the sum of 1 + 1. When calling `calculate`, th
 calculate(1, 1, ???) //fill in the ???
 ```
 
+## Exerise 1.7
+
+Same as the previous two exercises, but this time, you should pass as the third argument to `calculate` a function which is built in to Swift. **Hint**: both of these functions have names which are a single symbol. **Another hint**: read [this section from the "Basic Operators" documentation](https://developer.apple.com/library/prerelease/ios/documentation/Swift/Conceptual/Swift_Programming_Language/BasicOperators.html#//apple_ref/doc/uid/TP40014097-CH6-ID63).
+
+## Exercise 1.8 
+
+Read the section in the "Functions" documentation on [Function Types as Return Types](https://developer.apple.com/library/prerelease/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Functions.html#//apple_ref/doc/uid/TP40014097-CH10-ID174)
+
+Read the section in the "Expressions" documentation on [Closure Expression](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Expressions.html)
+
+The upshot is that the same way function types are perfectly valid parameters/arguments to functions 	so too they are valid return types. 
+
+Here's a function that returns a function:
+
+```swift
+func plus(x: Int) -> Int -> Int {
+    let myFunction = {
+        (y: Int) -> Int in
+        return x + y
+    }
+    return myFunction
+}
+```
+
+`plus` is a function that takes a single `Int` argument and returns a function which takes an `Int` and returns an `Int`. In this function, we create a function and name it `myFunction`. This function takes an `Int` and adds it to the `x` passed to `plus`. The return value of `plus` is the function `myFunction`. 
+
+Here's how you use `plus`
+
+```swift
+let increment = plus(1)
+increment(1) //prints 2
+
+let add22 = plus(22)
+add22(1) // prints 23
+```
+
+The first line declares a constant named `increment`. The value of `increment` is a function which will take an `Int` and add 1 to it. The `increment` constant can now be used like any other function, e.g. `increment(100)`. 
+
+From now on when we have a function that takes just one argument, we will refer to it as "a function from X to Y". For example, `func length(x: String) -> Int` can be referred to as a "function from String to Int", which means it takes a `String` as an argument and returns an `Int`. 
+
+Implement a function which takes a String and returns a function from String to String. The function should have the following signature. 
+
+```swift
+func join(x: String) -> String -> String { ... }
+```
+
+It should behave like this:
+
+```swift
+let joinWithHello = join("hello")
+joinWithHello(" world") //prints "hello world"
+
+let joinWithWhy = join("why")
+joinWithWhy(" not") //prints "why not"
+```
 
 
 
-
+	
 
 
 
