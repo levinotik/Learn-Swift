@@ -38,7 +38,7 @@ Implement a function named `mult` which takes two `Int`s as arguments and return
 mult(2, 2) //should print 4
 ```
 
-## Execercise 1.3
+## Exercise 1.3
 
 Every Swift function takes the form of:
 
